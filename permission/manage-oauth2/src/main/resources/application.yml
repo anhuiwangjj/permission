@@ -19,7 +19,7 @@ management:
     health:
       enabled: true
 
-###feign Ĭ�Ϲر��۶ϣ��뿴HystrixFeignConfiguration
+# feign 开启熔断
 feign:
   hystrix:
     enabled: true

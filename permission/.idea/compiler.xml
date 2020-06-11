@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="manage-admin" />
+        <module name="manage-common" />
+        <module name="manage-core" />
+        <module name="manage-eureka" />
+        <module name="manage-gateway" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="mageoauth2" target="1.8" />
+      <module name="manage-admin" target="1.8" />
+      <module name="manage-common" target="1.8" />
+      <module name="manage-core" target="1.8" />
+      <module name="manage-eureka" target="1.8" />
+      <module name="manage-gateway" target="1.8" />
+      <module name="oauth2" target="1.8" />
+      <module name="permission" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

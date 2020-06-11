@@ -26,6 +26,9 @@
         <module>manage-admin</module>
         <module>manage-core</module>
         <module>manage-common</module>
+        <module>manage-oauth2</module>
+        <module>manage-eureka</module>
+        <module>manage-gateway</module>
     </modules>
 
     <dependencies>

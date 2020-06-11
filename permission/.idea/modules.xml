@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/manage-admin/manage-admin.iml" filepath="$PROJECT_DIR$/manage-admin/manage-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/manage-common/manage-common.iml" filepath="$PROJECT_DIR$/manage-common/manage-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/manage-core/manage-core.iml" filepath="$PROJECT_DIR$/manage-core/manage-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/manage-eureka/manage-eureka.iml" filepath="$PROJECT_DIR$/manage-eureka/manage-eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/manage-gateway/manage-gateway.iml" filepath="$PROJECT_DIR$/manage-gateway/manage-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/manage-oauth2/manage-oauth2.iml" filepath="$PROJECT_DIR$/manage-oauth2/manage-oauth2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/permission.iml" filepath="$PROJECT_DIR$/permission.iml" />
+    </modules>
+  </component>
+</project>
