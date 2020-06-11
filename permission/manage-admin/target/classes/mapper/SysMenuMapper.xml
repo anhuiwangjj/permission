@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stone.manage.admin.dao.SysMenuMapper">
+  <resultMap id="BaseResultMap" type="com.stone.manage.admin.model.entity.SysMenu">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="menu_name" jdbcType="VARCHAR" property="menuName" />
+    <result column="parent_id" jdbcType="BIGINT" property="parentId" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="permissions" jdbcType="VARCHAR" property="permissions" />
+    <result column="type" jdbcType="CHAR" property="type" />
+    <result column="icon" jdbcType="VARCHAR" property="icon" />
+    <result column="order_num" jdbcType="INTEGER" property="orderNum" />
+    <result column="create_user" jdbcType="VARCHAR" property="createUser" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_user" jdbcType="VARCHAR" property="updateUser" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="del_flag" jdbcType="CHAR" property="delFlag" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, menu_name, parent_id, url, permissions, type, icon, order_num, create_user, create_time, 
+    update_user, update_time, del_flag
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sys_menu
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from sys_menu
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.stone.manage.admin.model.entity.SysMenu">
+    insert into sys_menu (id, menu_name, parent_id, 
+      url, permissions, type, 
+      icon, order_num, create_user, 
+      create_time, update_user, update_time, 
+      del_flag)
+    values (#{id,jdbcType=BIGINT}, #{menuName,jdbcType=VARCHAR}, #{parentId,jdbcType=BIGINT}, 
+      #{url,jdbcType=VARCHAR}, #{permissions,jdbcType=VARCHAR}, #{type,jdbcType=CHAR}, 
+      #{icon,jdbcType=VARCHAR}, #{orderNum,jdbcType=INTEGER}, #{createUser,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateUser,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{delFlag,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.stone.manage.admin.model.entity.SysMenu" useGeneratedKeys="true" keyProperty="id">
+    insert into sys_menu
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="menuName != null">
+        menu_name,
+      </if>
+      <if test="parentId != null">
+        parent_id,
+      </if>
+      <if test="url != null">
+        url,
+      </if>
+      <if test="permissions != null">
+        permissions,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="icon != null">
+        icon,
+      </if>
+      <if test="orderNum != null">
+        order_num,
+      </if>
+      <if test="createUser != null">
+        create_user,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateUser != null">
+        update_user,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="delFlag != null">
+        del_flag,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="menuName != null">
+        #{menuName,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=BIGINT},
+      </if>
+      <if test="url != null">
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="permissions != null">
+        #{permissions,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=CHAR},
+      </if>
+      <if test="icon != null">
+        #{icon,jdbcType=VARCHAR},
+      </if>
+      <if test="orderNum != null">
+        #{orderNum,jdbcType=INTEGER},
+      </if>
+      <if test="createUser != null">
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="delFlag != null">
+        #{delFlag,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.stone.manage.admin.model.entity.SysMenu">
+    update sys_menu
+    <set>
+      <if test="menuName != null">
+        menu_name = #{menuName,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        parent_id = #{parentId,jdbcType=BIGINT},
+      </if>
+      <if test="url != null">
+        url = #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="permissions != null">
+        permissions = #{permissions,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=CHAR},
+      </if>
+      <if test="icon != null">
+        icon = #{icon,jdbcType=VARCHAR},
+      </if>
+      <if test="orderNum != null">
+        order_num = #{orderNum,jdbcType=INTEGER},
+      </if>
+      <if test="createUser != null">
+        create_user = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        update_user = #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="delFlag != null">
+        del_flag = #{delFlag,jdbcType=CHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.stone.manage.admin.model.entity.SysMenu">
+    update sys_menu
+    set menu_name = #{menuName,jdbcType=VARCHAR},
+      parent_id = #{parentId,jdbcType=BIGINT},
+      url = #{url,jdbcType=VARCHAR},
+      permissions = #{permissions,jdbcType=VARCHAR},
+      type = #{type,jdbcType=CHAR},
+      icon = #{icon,jdbcType=VARCHAR},
+      order_num = #{orderNum,jdbcType=INTEGER},
+      create_user = #{createUser,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_user = #{updateUser,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      del_flag = #{delFlag,jdbcType=CHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+  <select id="findAll"  resultType="com.stone.manage.admin.model.dto.SysMenuResponseDto">
+    select t.id, t.menu_name menuName, t.parent_id parentId, t.url, t.permissions, t.type, t.icon,
+    t.order_num orderNum, t.create_user createUser, t.create_time createTime
+    from sys_menu t where t.del_flag = '0'
+  </select>
+
+  <select id="findPage"  resultType="com.stone.manage.admin.model.dto.SysMenuResponseDto">
+    select t.id, t.menu_name menuName, t.parent_id parentId, t.url, t.permissions, t.type, t.icon,
+    t.order_num orderNum, t.create_user createUser, t.create_time createTime
+    from sys_menu t where t.del_flag = '0'
+  </select>
+
+  <select id="findPageByName" parameterType="java.lang.String" resultType="com.stone.manage.admin.model.dto.SysMenuResponseDto">
+    <bind name="pattern" value="'%' + _parameter.menuName + '%'" />
+    select t.id, t.menu_name menuName, t.parent_id parentId, t.url, t.permissions, t.type, t.icon,
+    t.order_num orderNum, t.create_user createUser, t.create_time createTime
+    from sys_menu t where t.del_flag = '0'
+    and t.menu_name like #{pattern}
+  </select>
+
+  <select id="findByUserName" parameterType="java.lang.String" resultType="com.stone.manage.admin.model.dto.SysMenuResponseDto">
+  	select m.id, m.menu_name menuName, m.parent_id parentId, m.url, m.permissions, m.type, m.icon,
+    m.order_num orderNum, m.create_user createUser, m.create_time createTime
+  	from sys_menu m left join sys_role_menu rm on rm.menu_id = m.id
+  	left join sys_user_role ur on ur.role_id = rm.role_id
+  	left join sys_user u on u.id = ur.user_id
+  	where m.del_flag= '0' and u.name = #{userName,jdbcType=BIGINT}
+  </select>
+
+  <select id="findRoleMenus" parameterType="java.lang.Long" resultType="com.stone.manage.admin.model.dto.SysMenuResponseDto">
+    select m.id, m.menu_name menuName, m.parent_id parentId, m.url, m.permissions, m.type, m.icon,
+    m.order_num orderNum, m.create_user createUser, m.create_time createTime
+    from sys_menu m left join sys_role_menu rm on m.id = rm.menu_id
+    where m.del_flag = '0' and rm.role_id = #{roleId,jdbcType=BIGINT}
+  </select>
+
+  <!--删除 更新删除标记-->
+  <update id="updateDelFlag" parameterType="java.lang.Long">
+    update sys_menu set del_flag = '1'
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

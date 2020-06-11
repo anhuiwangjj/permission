@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: manage-oauth2
+
+  datasource:
+    name: druidDataSource
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/management?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+      username: root
+      password: root
+
+server:
+  port: 8002
+
+management:
+  endpoint:
+    health:
+      enabled: true
+
+###feign Ä¬ÈÏ¹Ø±ÕÈÛ¶Ï£¬Çë¿´HystrixFeignConfiguration
+feign:
+  hystrix:
+    enabled: true
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
